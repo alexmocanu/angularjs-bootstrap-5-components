@@ -1,0 +1,6 @@
+<li ng-class="{disabled: noPrevious()||ngDisabled, previous: align}" class="page-item pagination-prev">
+    <a href ng-click="selectPage(page - 1, $event)" ng-disabled="noPrevious()||ngDisabled" uib-tabindex-toggle class="page-link">{{::getText('previous')}}</a>
+</li>
+<li ng-class="{disabled: noNext()||ngDisabled, next: align}" class="page-item pagination-next">
+    <a href ng-click="selectPage(page + 1, $event)" ng-disabled="noNext()||ngDisabled" uib-tabindex-toggle class="page-link">{{::getText('next')}}</a>
+</li>
