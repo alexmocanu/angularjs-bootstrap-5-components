@@ -7,7 +7,7 @@ It reuses a lot of code from that project and I'm trying to adapt it to my own n
 - [x] - alert
 - [ ] - buttons
 - [ ] - carousel
-- [ ] - collapse
+- [x] - collapse
 - [ ] - date parser
 - [ ] - date picker
 - [ ] - date picker format
