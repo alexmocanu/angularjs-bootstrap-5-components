@@ -5,7 +5,7 @@ It reuses a lot of code from that project and I'm trying to adapt it to my own n
 
 - [ ] - accordion
 - [x] - alert
-- [ ] - buttons
+- [x] - buttons
 - [ ] - carousel
 - [x] - collapse
 - [ ] - date parser
