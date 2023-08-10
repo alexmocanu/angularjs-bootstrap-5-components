@@ -18,7 +18,7 @@ It reuses a lot of code from that project and I'm trying to adapt it to my own n
 - [ ] - popover
 - [ ] - position
 - [x] - progress bar
-- [ ] - ratings
+- [x] - ratings
 - [ ] - tabs
 - [ ] - time picker
 - [ ] - tooltip
