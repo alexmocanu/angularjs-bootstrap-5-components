@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+    <body>
+
+        <div class="container" ng-controller="MainController">
+
+            <h4>Default</h4>
+            <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+            <span class="label" ng-class="{'text-warning': percent<30, 'text-info': percent>=30 && percent<70, 'text-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+            <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+
+            <button type="button" class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+            <hr />
+
+            <h4>Custom icons</h4>
+            <div ng-init="x = 5"><span uib-rating ng-model="x" max="15" state-on="'bi bi-moon-fill'" state-off="'bi bi-moon'" aria-labelledby="custom-icons-1"></span> <b>(<i>Rate:</i> {{x}})</b></div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="/scripts/rating.js"></script>
+        <script>
+            let myApp = angular.module('myApp', ['ui.bootstrap5.rating']);
+            myApp.controller('MainController', function MainController($scope) {
+                $scope.rate = 7;
+                $scope.max = 10;
+                $scope.isReadonly = false;
+
+                $scope.hoveringOver = function(value) {
+                  $scope.overStar = value;
+                  $scope.percent = 100 * (value / $scope.max);
+                };
+            });
+        </script>
+    </body>
+</html>
